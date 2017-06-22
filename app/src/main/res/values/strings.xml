@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Task2</string>
+    <string name="nameLabel">Name</string>
+    <string name="nameContent">Esthefanie Pessoa Lanza</string>
+    <string name="birthdayLabel">Birthday</string>
+    <string name="genderLabel">Gender</string>
+    <string name="genderContent">Female</string>
+    <string name="birthdayContent">October 16, 1995</string>
 </resources>

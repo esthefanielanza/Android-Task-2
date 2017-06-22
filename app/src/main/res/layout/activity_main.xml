@@ -13,124 +13,114 @@
         android:layout_height="180dp"
         android:background="@color/colorPrimary" />
 
-    <View
-        android:id="@+id/avatar_box"
-        android:layout_width="290dp"
-        android:layout_height="160dp"
+    <!-- Avatar Section -->
+    <RelativeLayout
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="60dp"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimaryLight" />
+        android:layout_marginTop="60dp">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="125dp"
-        android:id="@+id/view" />
+        <View
+            android:id="@+id/avatar_box"
+            android:layout_width="290dp"
+            android:layout_height="160dp"
+            style="@style/whiteBox"/>
 
-    <ImageView
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_alignTop="@+id/avatar_box"
+        <View
+            android:id="@+id/avatar_line"
+            android:layout_alignTop="@id/avatar_box"
+            android:layout_marginTop="60dp"
+            style="@style/avatarLine" />
+
+        <ImageView
+            android:id="@+id/avatar_img"
+            android:layout_alignTop="@+id/avatar_box"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/doge"
+            style="@style/avatarImg"/>
+
+    </RelativeLayout>
+
+    <!-- Personal Information Section -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/avatar"
         android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:src="@mipmap/doge" />
-
-
-
-    <View
-        android:id="@+id/information_box"
-        android:layout_width="290dp"
-        android:layout_height="match_parent"
-        android:layout_below="@id/avatar_box"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimaryLight" />
-
-
-
-    <TextView
-        android:id="@+id/name_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/information_box"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Name"/>
-
-    <TextView
-        android:id="@+id/name_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/name_label"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="22sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:paddingBottom="10dp"
-        android:text="Esthefanie Pessoa Lanza"/>
-
-    <View
-        android:layout_width="260dp"
-        android:layout_centerHorizontal="true"
-        android:layout_height="0.5dp"
-        android:background="@color/background_color"
-        android:layout_alignBottom="@id/name_content"
-        android:id="@+id/view" />
-
-    <LinearLayout
-        android:id="@+id/birthday"
-        android:layout_marginTop="110dp"
-        android:layout_alignTop="@id/information_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
         android:layout_centerHorizontal="true">
+
+        <View
+            android:id="@+id/information_box"
+            android:layout_width="290dp"
+            android:layout_height="match_parent"
+            style="@style/whiteBox" />
+
         <TextView
-            android:id="@+id/birthday_label"
+            android:id="@+id/name_label"
+            android:layout_alignTop="@+id/information_box"
+            android:text="@string/nameLabel"
+            style="@style/centralizedText"/>
+
+        <TextView
+            android:id="@+id/name_content"
+            android:layout_alignTop="@id/name_label"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingBottom="10dp"
+            android:text="@string/nameContent"
+            style="@style/centralizedText"/>
+
+        <View
+            android:id="@+id/name_line"
+            android:layout_width="260dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="0.5dp"
+            android:background="@color/background_color"
+            android:layout_alignBottom="@id/name_content" />
+
+        <RelativeLayout
+            android:id="@+id/birthday"
+            android:layout_marginTop="30dp"
+            android:layout_alignTop="@id/name_line"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/information_box"
-            android:layout_alignLeft="@id/information_box"
-            android:text="Birthday"/>
+            android:layout_centerHorizontal="true">
 
-        <TextView
-            android:id="@+id/birthday_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/information_box"
-            android:layout_alignLeft="@id/birthday_label"
-            android:layout_marginLeft="40dp"
-            android:text="October, 16 1995"/>
-        />
+            <TextView
+                android:id="@+id/birthday_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/information_box"
+                android:text="@string/birthdayLabel"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/birthday_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/information_box"
+                android:layout_marginLeft="100dp"
+                android:text="@string/birthdayContent"/>
+            />
 
-    <LinearLayout
-        android:layout_marginTop="40dp"
-        android:layout_alignTop="@id/birthday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
-        android:layout_alignLeft="@id/birthday">
-        <TextView
-            android:id="@+id/gender_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/information_box"
-            android:layout_alignLeft="@id/information_box"
-            android:text="Gender"/>
+            <TextView
+                android:id="@+id/gender_label"
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/birthday_label"
+                android:text="@string/genderLabel"/>
 
-        <TextView
-            android:id="@+id/gender_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="46dp"
-            android:text="Female"/>
-        />
+            <TextView
+                android:id="@+id/gender_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/gender_label"
+                android:layout_alignLeft="@id/birthday_content"
+                android:text="@string/genderContent"/>
+            />
 
-    </LinearLayout>
+        </RelativeLayout>
 
+    </RelativeLayout>
 </RelativeLayout>
